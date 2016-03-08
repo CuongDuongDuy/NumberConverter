@@ -16,7 +16,7 @@ namespace NumberConverter
             {"V", 5},
             {"I", 1},
         }; 
-        public string CovertToLetter(int number)
+        public virtual string ConvertToLetter(int number)
         {
             if (number < 1 || number > 3000) throw new IndexOutOfRangeException("The number supplied is out of the expected range (1 - 3000).");
             var result = new StringBuilder();
@@ -29,6 +29,17 @@ namespace NumberConverter
                 }
             }
             return result.ToString();
+        }
+
+        public int ConvertToValue(string s)
+        {
+            var result = 0;
+            var found = romanValues.TryGetValue(s, out result);
+            if (found)
+            {
+                return result;
+            }
+            throw new IndexOutOfRangeException();
         }
     }
 }

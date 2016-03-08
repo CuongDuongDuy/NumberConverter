@@ -1,57 +1,56 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using NUnit.Framework;
 
 namespace NumberConverter.Test
 {
-    [TestClass]
+    [TestFixture]
     public class RomanNumeralConverterExpectedValuesTest
     {
-        [TestMethod]
+        [Test]
         public void Number_3000_Shoud_Return_MMM()
         {
             var converter = new RomanNumeralConverter();
-            var letter = converter.CovertToLetter(3000);
+            var letter = converter.ConvertToLetter(3000);
             Assert.AreEqual("MMM", letter);
         }
 
-        [TestMethod]
+        [Test]
         public void Number_1000_Should_Return_M()
         {
             var converter = new RomanNumeralConverter();
-            var letter = converter.CovertToLetter(1000);
+            var letter = converter.ConvertToLetter(1000);
             Assert.AreEqual("M", letter);
         }
 
 
-        [TestMethod]
+        [Test]
         public void Number_550_Should_Return_DL()
         {
             var converter = new RomanNumeralConverter();
-            var letter = converter.CovertToLetter(550);
+            var letter = converter.ConvertToLetter(550);
             Assert.AreEqual("DL", letter);
         }
 
-        [TestMethod]
+        [Test]
         public void Number_200_Should_Return_CC()
         {
             var converter = new RomanNumeralConverter();
-            var letter = converter.CovertToLetter(200);
+            var letter = converter.ConvertToLetter(200);
             Assert.AreEqual("CC", letter);
         }
 
-        [TestMethod]
+        [Test]
         public void Number_10_Should_Return_X()
         {
             var converter = new RomanNumeralConverter();
-            var letter = converter.CovertToLetter(10);
+            var letter = converter.ConvertToLetter(10);
             Assert.AreEqual("X", letter);
         }
 
-        [TestMethod]
+        [Test]
         public void Number_1_Should_Return_I()
         {
             var converter = new RomanNumeralConverter();
-            var letter = converter.CovertToLetter(1);
+            var letter = converter.ConvertToLetter(1);
             Assert.AreEqual("I", letter);
         }
 
